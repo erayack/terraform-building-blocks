@@ -1,0 +1,29 @@
+name: terraform-platform
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * *" # drift detection plan every morning
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
+      - name: Terraform init
+        working-directory: 06-operations-platform
+        run: terraform init
+      - name: Terraform validate
+        working-directory: 06-operations-platform
+        run: terraform validate
+      - name: Terraform test
+        working-directory: 06-operations-platform
+        run: terraform test
+      - name: Terraform plan
+        working-directory: 06-operations-platform
+        run: terraform plan -out=tfplan

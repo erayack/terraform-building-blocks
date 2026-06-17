@@ -1,0 +1,18 @@
+project     = "demo"
+environment = "dev"
+aws_region  = "us-east-1"
+
+vpc_cidr = "10.40.0.0/16"
+
+private_subnets = {
+  private-a = { cidr = "10.40.1.0/24", az = "us-east-1a" }
+  private-b = { cidr = "10.40.2.0/24", az = "us-east-1b" }
+}
+
+ingress_rules = [
+  { description = "HTTP from private network", port = 80, cidr_blocks = ["10.0.0.0/8"] },
+  { description = "HTTPS from private network", port = 443, cidr_blocks = ["10.0.0.0/8"] }
+]
+
+enable_logs        = true
+log_retention_days = 14

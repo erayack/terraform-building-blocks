@@ -1,0 +1,67 @@
+# Terraform working directories
+**/.terraform/*
+.terraform/
+
+# Terraform state files may contain sensitive infrastructure data
+*.tfstate
+*.tfstate.*
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Terraform variable files can contain secrets or account-specific values
+*.tfvars
+*.tfvars.json
+
+# Keep example variable files committed
+!*.tfvars.example
+
+# Terraform plan/output artifacts
+*.tfplan
+tfplan
+plan.out
+plan.json
+*.plan
+
+# Terraform override files are usually local-only
+*_override.tf
+*_override.tf.json
+override.tf
+override.tf.json
+
+# Terraform lock file
+# Real projects often commit this file. This learning repo ignores it so each
+# level can be experimented with freely across machines/providers.
+.terraform.lock.hcl
+
+# Local provider/plugin mirror experiments
+.terraform.d/
+
+# Terragrunt cache
+**/.terragrunt-cache/*
+
+# AWS/local credential material - never commit
+.aws/
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Local editor/OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local notes and temporary files
+*.tmp
+*.log
+.env
+.env.*
+
+# pi agent local workspace metadata
+.pi/

@@ -1,0 +1,7 @@
+---
+- name: Example handoff target
+  hosts: all
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: "Configure software after Terraform creates infrastructure."
