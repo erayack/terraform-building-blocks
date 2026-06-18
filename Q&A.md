@@ -156,6 +156,24 @@ Policy as code means writing rules that check infrastructure changes before they
 
 No. In this repo it is stored under `06-operations-platform/ci/` as educational source material. It does not run automatically unless copied into `.github/workflows/`.
 
+## Real-world Layout
+
+### What belongs in `modules/`?
+
+Reusable Terraform building blocks belong in `modules/`. They should describe how to build something without hardcoding a specific environment.
+
+### What belongs in `live/`?
+
+Real environment stacks belong in `live/`. These are the root modules you run Terraform from for dev, prod, network, app, and similar boundaries.
+
+### Why split state between stacks?
+
+Split state when parts of the system have different owners, lifecycles, permissions, apply frequency, or blast radius.
+
+### Are folders better than workspaces?
+
+Not always, but folders are often clearer for serious environments because code review, backend keys, permissions, and CI targeting are more explicit.
+
 ## Final Check
 
 If you can answer these from memory, you understand the core of this repo:

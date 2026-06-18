@@ -103,6 +103,20 @@ Check yourself:
 - What does drift detection look for?
 - Why should CI run `fmt`, `validate`, `test`, and `plan` before apply?
 
+## Level 7 — Real-world Project Layout
+
+1. Compare `live/dev/network` and `live/prod/network`. What is the same, and what is different?
+2. Change the dev VPC CIDR in `dev.tfvars.example`, then predict which stack should be affected.
+3. Add a `region` variable to the network live stacks.
+4. Explain why `modules/network` should not hardcode `dev` or `prod`.
+5. Sketch where you would put a `database` stack in this layout.
+
+Check yourself:
+
+- What belongs in `modules/`?
+- What belongs in `live/`?
+- When should two parts of infrastructure have separate state files?
+
 ## Stretch exercises
 
 1. Add a root `Makefile` with commands such as `fmt`, `validate`, and `test`.

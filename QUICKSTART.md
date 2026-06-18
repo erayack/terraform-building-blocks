@@ -60,6 +60,7 @@ terraform destroy
 04-dynamic
 05-ecosystem-integration
 06-operations-platform
+07-real-world-project-layout
 ```
 
 Each directory is its own Terraform example. Run Terraform commands from inside the directory you are studying.

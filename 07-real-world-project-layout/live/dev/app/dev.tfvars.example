@@ -1,0 +1,4 @@
+project      = "payments"
+environment  = "dev"
+network_name = "payments-dev-network"
+subnet_ids   = ["example-subnet-a", "example-subnet-b"]

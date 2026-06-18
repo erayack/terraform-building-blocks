@@ -1,6 +1,6 @@
-# Terraform Building Blocks: 6 Levels
+# Terraform Building Blocks: 7 Levels
 
-A small, book-style Terraform course you can run locally. It starts with one hardcoded resource and builds up to modules, dynamic configuration, policy checks, and platform workflows.
+A small, book-style Terraform course you can run locally. It starts with one hardcoded resource and builds up to modules, dynamic configuration, policy checks, platform workflows, and real-world project layout.
 
 The examples use AWS so the code feels real. The same Terraform ideas apply to Azure, Google Cloud, Kubernetes, GitHub, and most other providers.
 
@@ -14,6 +14,7 @@ The examples use AWS so the code feels real. The same Terraform ideas apply to A
 4. [Dynamic](04-dynamic/README.md): `count`, `for_each`, dynamic blocks, lifecycle
 5. [Ecosystem Integration](05-ecosystem-integration/README.md): provisioners, workspaces, Terragrunt, policy as code
 6. [Operations Platform](06-operations-platform/README.md): CI/CD, testing, drift detection, promotion, observability
+7. [Real-world Project Layout](07-real-world-project-layout/README.md): environment folders, live stacks, reusable modules, state boundaries
 
 ## How to study this repo
 
@@ -23,7 +24,7 @@ Suggested path:
 
 1. [`QUICKSTART.md`](QUICKSTART.md): run the first example with minimal reading.
 2. [`COST-SAFETY.md`](COST-SAFETY.md): know what can create AWS resources and how to clean up.
-3. Level READMEs: read them in order from `01-foundation` to `06-operations-platform`.
+3. Level READMEs: read them in order from `01-foundation` to `07-real-world-project-layout`.
 4. [`TERRAFORM-CLI.md`](TERRAFORM-CLI.md): keep this open when you forget a command.
 5. [`GLOSSARY.md`](GLOSSARY.md): use this when Terraform vocabulary starts to blur together.
 6. [`EXERCISES.md`](EXERCISES.md): do the small changes after each level.
@@ -85,6 +86,14 @@ Only run `terraform apply` when the plan makes sense to you.
 │   ├── ci/github-actions.yml
 │   ├── tests/release.tftest.hcl
 │   ├── main.tf
+│   └── README.md
+├── 07-real-world-project-layout/
+│   ├── modules/
+│   │   ├── network/
+│   │   └── app/
+│   ├── live/
+│   │   ├── dev/
+│   │   └── prod/
 │   └── README.md
 ├── QUICKSTART.md
 ├── TERRAFORM-CLI.md
