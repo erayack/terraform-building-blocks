@@ -32,6 +32,13 @@ Suggested path:
 7. [`Q&A.md`](Q&A.md): quiz yourself without digging through the chapters.
 8. [`TOOLS-AROUND-TERRAFORM.md`](TOOLS-AROUND-TERRAFORM.md): see what usually surrounds Terraform in real teams.
 
+Extra references:
+
+- [`LEARNING-PATH.md`](LEARNING-PATH.md): the level-by-level map.
+- [`COMMON-MISTAKES.md`](COMMON-MISTAKES.md): mistakes to watch for while practicing.
+- [`REFERENCES.md`](REFERENCES.md): official docs and related tools.
+- [`Makefile`](Makefile): simple helper commands for formatting, validation, tests, and local cleanup.
+
 ## Suggested workflow
 
 ```bash
@@ -110,5 +117,9 @@ Only run `terraform apply` when the plan makes sense to you.
 ├── EXERCISES.md
 ├── Q&A.md
 ├── TOOLS-AROUND-TERRAFORM.md
+├── LEARNING-PATH.md
+├── COMMON-MISTAKES.md
+├── REFERENCES.md
+├── Makefile
 └── README.md
 ```
