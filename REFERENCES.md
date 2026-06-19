@@ -35,6 +35,7 @@ A short list of primary references. Prefer these when you want to verify behavio
 
 ## Terraform ecosystem
 
+- OpenTofu: https://opentofu.org/docs/
 - Terragrunt: https://terragrunt.gruntwork.io/
 - Terramate: https://terramate.io/docs/
 - Packer: https://developer.hashicorp.com/packer

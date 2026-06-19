@@ -198,6 +198,18 @@ These tools help explain modules and dependency graphs. Terraform also has a bui
 terraform graph
 ```
 
+## OpenTofu
+
+OpenTofu is an open-source fork of Terraform created after Terraform's license changed from MPL to BUSL. It uses the same basic workflow and much of the same language style:
+
+```bash
+tofu init
+tofu plan
+tofu apply
+```
+
+For many learning examples, Terraform and OpenTofu look almost identical. In real projects, check provider compatibility, backend behavior, and team/tooling support before switching.
+
 ## Wrappers and orchestrators
 
 Examples:
