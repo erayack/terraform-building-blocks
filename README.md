@@ -38,6 +38,7 @@ Extra references:
 - [`COMMON-MISTAKES.md`](COMMON-MISTAKES.md): mistakes to watch for while practicing.
 - [`REFERENCES.md`](REFERENCES.md): official docs and related tools.
 - [`Makefile`](Makefile): simple helper commands for formatting, validation, tests, and local cleanup.
+- [`SKILL.md`](SKILL.md): AI agent guidance for safe Terraform/OpenTofu changes, reviews, validation, and rollback planning.
 
 ## Suggested workflow
 
@@ -121,5 +122,6 @@ Only run `terraform apply` when the plan makes sense to you.
 ├── COMMON-MISTAKES.md
 ├── REFERENCES.md
 ├── Makefile
+├── SKILL.md
 └── README.md
 ```
