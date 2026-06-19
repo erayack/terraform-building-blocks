@@ -1,6 +1,6 @@
 # Terraform CLI Guide
 
-This guide is the command-line companion to the six Terraform levels in this repository.
+This guide is the command-line companion to the eight Terraform levels in this repository.
 
 The level READMEs explain Terraform building blocks. This file explains the commands you use to work with those building blocks safely.
 

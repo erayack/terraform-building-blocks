@@ -1,4 +1,4 @@
-# Level 1 — The Foundation
+# Level 1: Foundation
 
 Terraform begins with three simple ideas: choose a provider, describe a resource, and give Terraform enough literal configuration to call the provider API.
 

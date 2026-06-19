@@ -13,6 +13,16 @@ variable "environment" {
   default = "dev"
 }
 
+variable "owner" {
+  type    = string
+  default = "platform-team@example.com"
+}
+
+variable "cost_center" {
+  type    = string
+  default = "learning-terraform"
+}
+
 variable "vpc_cidr" {
   type    = string
   default = "10.40.0.0/16"

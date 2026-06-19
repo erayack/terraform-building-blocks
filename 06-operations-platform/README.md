@@ -1,4 +1,4 @@
-# Level 6 — Operations Platform
+# Level 6: Operations Platform
 
 Level 6 treats Terraform as part of an operating model.
 

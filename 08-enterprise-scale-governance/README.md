@@ -1,4 +1,4 @@
-# Level 8 — Enterprise Scale and Governance
+# Level 8: Enterprise Scale and Governance
 
 Level 7 showed where Terraform code goes when a repo grows. Level 8 looks at what happens when Terraform is used across many teams, accounts, regions, and compliance requirements.
 
@@ -32,7 +32,11 @@ This level uses small examples for five areas:
 │   └── account-request.example.json
 ├── policy/
 │   ├── required-tags.rego
-│   └── allowed-regions.rego
+│   ├── allowed-regions.rego
+│   └── fixtures/
+│       ├── missing-tags.plan.json
+│       ├── complete-tags.plan.json
+│       └── disallowed-region.plan.json
 ├── catalog/
 │   └── service-catalog.example.yml
 ├── finops/
@@ -304,6 +308,8 @@ terraform show -json plan.out > ../08-enterprise-scale-governance/plan.json
 cd ../08-enterprise-scale-governance
 opa eval --input plan.json --data policy/required-tags.rego 'data.terraform.policy.deny'
 ```
+
+This Level 2 example is expected to return a denial because its bucket tags do not include the enterprise `Owner` and `CostCenter` tags required by `required-tags.rego`. That is the governance lesson: a syntactically valid Terraform plan can still fail an organizational policy check.
 
 You can also try the tiny fixtures without running Terraform:
 

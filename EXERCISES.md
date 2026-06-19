@@ -4,7 +4,7 @@ These exercises turn the examples into practice. Try them after reading each lev
 
 The goal is not to finish quickly. The goal is to retrieve the idea from memory, make a small change, and check the result with `terraform plan`.
 
-## Level 1 — Foundation
+## Level 1: Foundation
 
 1. Change the AWS region in the provider block.
 2. Change the S3 bucket name prefix.
@@ -16,7 +16,7 @@ Check yourself:
 - What does the provider block configure?
 - What are the two labels in a resource block?
 
-## Level 2 — Abstraction
+## Level 2: Abstraction
 
 1. Copy the example variable file:
 
@@ -38,7 +38,7 @@ Check yourself:
 - Is `cost_center` an input, local, data source, or output?
 - Why is `local.common_tags` better than repeating tags in every resource?
 
-## Level 3 — Structural
+## Level 3: Structural
 
 1. Add a new output inside `modules/static-site/outputs.tf` for the bucket ARN.
 2. Expose that output from the root `outputs.tf`.
@@ -53,7 +53,7 @@ Check yourself:
 - What is the difference between the root module and child module?
 - How does information cross a module boundary?
 
-## Level 4 — Dynamic
+## Level 4: Dynamic
 
 1. Add a third private subnet to `private_subnets`.
 2. Add an SSH ingress rule for port `22`, but restrict it to a private CIDR range.
@@ -66,7 +66,7 @@ Check yourself:
 - What is `each.value`?
 - What does the `dynamic "ingress"` block generate?
 
-## Level 5 — Ecosystem Integration
+## Level 5: Ecosystem Integration
 
 1. Select a workspace:
 
@@ -84,7 +84,7 @@ Check yourself:
 - What do workspaces separate?
 - Why are provisioners usually a last resort?
 
-## Level 6 — Operations Platform
+## Level 6: Operations Platform
 
 1. Run:
 
@@ -103,7 +103,7 @@ Check yourself:
 - What does drift detection look for?
 - Why should CI run `fmt`, `validate`, `test`, and `plan` before apply?
 
-## Level 7 — Real-world Project Layout
+## Level 7: Real-world Project Layout
 
 1. Compare `live/dev/network` and `live/prod/network`. What is the same, and what is different?
 2. Change the dev VPC CIDR in `dev.tfvars.example`, then predict which stack should be affected.
@@ -117,7 +117,7 @@ Check yourself:
 - What belongs in `live/`?
 - When should two parts of infrastructure have separate state files?
 
-## Level 8 — Enterprise Scale and Governance
+## Level 8: Enterprise Scale and Governance
 
 1. Open `landing-zone/account-request.example.json`. Add a field that would help an auditor understand ownership.
 2. Open `policy/required-tags.rego`. Explain what happens when a resource has no `tags` field at all.
@@ -134,7 +134,7 @@ Check yourself:
 ## Stretch exercises
 
 1. Add a root `Makefile` with commands such as `fmt`, `validate`, and `test`.
-2. Add a `.gitignore` for Terraform-generated files.
+2. Extend the root `.gitignore` with one Terraform-generated artifact that is not already covered.
 3. Add one more OPA policy rule.
 4. Add a second environment tfvars example, such as `prod.tfvars.example`.
-5. Write your own `07-*` level idea, but do not implement it until you can explain why the six current levels are not enough.
+5. Write your own `09-*` level idea, but do not implement it until you can explain why the eight current levels are not enough.

@@ -1,4 +1,4 @@
-# Level 3 — The Structural
+# Level 3: Structural
 
 Level 3 is about shape. Terraform projects become easier to reason about when related resources are packaged together and state is treated as shared infrastructure metadata.
 

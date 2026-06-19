@@ -1,4 +1,4 @@
-# Level 4 — The Dynamic
+# Level 4: Dynamic
 
 Level 4 replaces repeated copy/paste configuration with Terraform expressions and meta-arguments.
 
@@ -18,7 +18,7 @@ outputs.tf
 README.md
 ```
 
-This level creates a VPC, private subnets, a security group, and an optional CloudWatch log group.
+This level creates a VPC, private subnets, a security group, and an optional CloudWatch log group. It also carries a shared ownership tag set so the dynamic examples connect to the governance checks introduced later.
 
 ## Meta-argument: `for_each`
 
@@ -138,7 +138,7 @@ This avoids manually writing many nearly identical ingress blocks.
 
 ## Object types
 
-The input variable uses a rich type:
+The input variable uses a structured type:
 
 ```hcl
 variable "ingress_rules" {

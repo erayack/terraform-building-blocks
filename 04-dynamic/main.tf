@@ -13,13 +13,23 @@ provider "aws" {
   region = var.aws_region
 }
 
+locals {
+  common_tags = {
+    Project     = var.project
+    Environment = var.environment
+    Owner       = var.owner
+    CostCenter  = var.cost_center
+    ManagedBy   = "terraform"
+  }
+}
+
 resource "aws_vpc" "this" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
 
-  tags = {
+  tags = merge(local.common_tags, {
     Name = "${var.project}-${var.environment}"
-  }
+  })
 }
 
 resource "aws_subnet" "private" {
@@ -29,16 +39,21 @@ resource "aws_subnet" "private" {
   cidr_block        = each.value.cidr
   availability_zone = each.value.az
 
-  tags = {
+  tags = merge(local.common_tags, {
     Name = "${var.project}-${var.environment}-${each.key}"
     Tier = "private"
-  }
+  })
 }
 
 resource "aws_security_group" "app" {
   name        = "${var.project}-${var.environment}-app"
   description = "Dynamic application security group"
   vpc_id      = aws_vpc.this.id
+
+  tags = merge(local.common_tags, {
+    Name      = "${var.project}-${var.environment}-app"
+    Component = "app"
+  })
 
   dynamic "ingress" {
     for_each = var.ingress_rules
@@ -68,6 +83,11 @@ resource "aws_cloudwatch_log_group" "app" {
   count             = var.enable_logs ? 1 : 0
   name              = "/${var.project}/${var.environment}/app"
   retention_in_days = var.log_retention_days
+
+  tags = merge(local.common_tags, {
+    Name      = "${var.project}-${var.environment}-app-logs"
+    Component = "app"
+  })
 
   lifecycle {
     prevent_destroy = true

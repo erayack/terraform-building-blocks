@@ -1,4 +1,4 @@
-# Level 5 — Ecosystem Integration
+# Level 5: Ecosystem Integration
 
 At this level Terraform is no longer just a command you run locally. It becomes part of a larger delivery system.
 

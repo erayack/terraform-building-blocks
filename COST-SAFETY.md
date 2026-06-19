@@ -14,6 +14,8 @@ Read this before running `terraform apply`.
 | `04-dynamic` | Yes | Creates VPC, subnets, security group, optional log group |
 | `05-ecosystem-integration` | No cloud resources by default | Uses `null_resource`; OPA/Terragrunt examples are workflow-focused |
 | `06-operations-platform` | No AWS | Uses the `random` provider only |
+| `07-real-world-project-layout` | No cloud resources by default | Uses skeletal local modules that return derived values |
+| `08-enterprise-scale-governance` | No Terraform infrastructure | Uses policy, catalog, budget, and recovery examples |
 
 ## Golden rule
 

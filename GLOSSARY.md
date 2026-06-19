@@ -1,6 +1,6 @@
 # Terraform Building Blocks Glossary
 
-A compact reference for the language used across the six Terraform levels. These definitions are intentionally short so they can be reviewed quickly while working through the examples.
+A compact reference for the language used across the eight Terraform levels. These definitions are intentionally short so they can be reviewed quickly while working through the examples.
 
 ## Core Terraform Terms
 

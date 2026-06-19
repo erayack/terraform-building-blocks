@@ -1,4 +1,4 @@
-# Level 7 — Real-world Project Layout
+# Level 7: Real-world Project Layout
 
 By now you have seen Terraform's main building blocks. This level is about where those blocks go when a repo grows past a few files.
 
@@ -273,7 +273,7 @@ resource "aws_s3_bucket" "west" {
 }
 ```
 
-Do not introduce aliases until you need them. They add power, but also more wiring.
+Do not introduce aliases until you need them. They are useful, but they add wiring.
 
 ## Naming conventions
 

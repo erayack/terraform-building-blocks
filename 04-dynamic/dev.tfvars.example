@@ -1,6 +1,8 @@
 project     = "demo"
 environment = "dev"
 aws_region  = "us-east-1"
+owner       = "platform-team@example.com"
+cost_center = "learning-terraform"
 
 vpc_cidr = "10.40.0.0/16"
 

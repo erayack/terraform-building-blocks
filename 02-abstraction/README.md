@@ -1,4 +1,4 @@
-# Level 2 — The Abstraction
+# Level 2: Abstraction
 
 Level 1 proved that Terraform can create infrastructure. Level 2 makes the code configurable, readable, and useful to other systems.
 
