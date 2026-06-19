@@ -117,6 +117,20 @@ Check yourself:
 - What belongs in `live/`?
 - When should two parts of infrastructure have separate state files?
 
+## Level 8 — Enterprise Scale and Governance
+
+1. Open `landing-zone/account-request.example.json`. Add a field that would help an auditor understand ownership.
+2. Open `policy/required-tags.rego`. Explain what happens when a resource has no `tags` field at all.
+3. Add one approved region to `policy/allowed-regions.rego`.
+4. Add a new service entry to `catalog/service-catalog.example.yml` for a database pattern.
+5. Open `dr/recovery-plan.example.md`. Write one check that proves the app is actually working after infrastructure is restored.
+
+Check yourself:
+
+- What problem does a landing zone solve?
+- Why is a service catalog different from a module folder?
+- Why is cost ownership part of infrastructure design?
+
 ## Stretch exercises
 
 1. Add a root `Makefile` with commands such as `fmt`, `validate`, and `test`.

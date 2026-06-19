@@ -1,0 +1,27 @@
+budgets:
+  - scope: team
+    name: payments-dev-monthly
+    team: payments
+    environment: dev
+    monthly_limit_usd: 500
+    alert_thresholds:
+      - 50
+      - 80
+      - 100
+    required_tags:
+      - Project
+      - Environment
+      - Owner
+      - CostCenter
+
+  - scope: service
+    name: payments-prod-api-monthly
+    team: payments
+    service: api
+    environment: prod
+    monthly_limit_usd: 5000
+    requires_approval_above_usd: 1000
+    alert_thresholds:
+      - 50
+      - 80
+      - 100

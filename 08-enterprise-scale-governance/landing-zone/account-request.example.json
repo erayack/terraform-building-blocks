@@ -1,0 +1,10 @@
+{
+  "team": "payments",
+  "environment": "prod",
+  "cloud": "aws",
+  "region": "us-east-1",
+  "cost_center": "fin-2042",
+  "data_classification": "confidential",
+  "requested_by": "payments-platform@example.com",
+  "business_owner": "payments-director@example.com"
+}

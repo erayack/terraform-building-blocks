@@ -1,0 +1,22 @@
+{
+  "variables": {
+    "aws_region": {
+      "value": "us-east-1"
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "aws_s3_bucket.example",
+      "type": "aws_s3_bucket",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "tags": {
+            "Project": "payments",
+            "Environment": "dev"
+          }
+        }
+      }
+    }
+  ]
+}

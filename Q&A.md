@@ -174,6 +174,28 @@ Split state when parts of the system have different owners, lifecycles, permissi
 
 Not always, but folders are often clearer for serious environments because code review, backend keys, permissions, and CI targeting are more explicit.
 
+## Enterprise Scale and Governance
+
+### What is a landing zone?
+
+A landing zone is a prepared cloud foundation for teams. It usually includes accounts or projects, identity boundaries, networking, logging, security guardrails, and state storage patterns.
+
+### What is a service catalog?
+
+A service catalog is a set of approved infrastructure patterns teams can request or reuse. It may use Terraform modules underneath, but it adds ownership, guardrails, documentation, and workflow around them.
+
+### Why does policy as code matter at scale?
+
+Policy as code catches repeated mistakes before apply. It gives teams fast feedback and gives the organization a consistent way to enforce rules.
+
+### What is FinOps in a Terraform workflow?
+
+FinOps connects infrastructure changes to cost ownership. In Terraform workflows, that usually means cost estimation, budget checks, required tags, and showback or chargeback reporting.
+
+### Why is Terraform not a full disaster recovery plan?
+
+Terraform can recreate infrastructure shape, but recovery also needs data backups, restore tests, failover steps, runbooks, and business recovery targets.
+
 ## Final Check
 
 If you can answer these from memory, you understand the core of this repo:

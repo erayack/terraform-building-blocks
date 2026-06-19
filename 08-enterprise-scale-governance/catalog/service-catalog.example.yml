@@ -1,0 +1,37 @@
+services:
+  - name: static-site
+    description: Private S3-backed static site foundation
+    owner: platform-web@example.com
+    module_source: git::https://github.com/example/terraform-modules.git//static-site
+    allowed_environments:
+      - dev
+      - test
+      - prod
+    required_inputs:
+      - project
+      - environment
+      - owner
+      - cost_center
+    guardrails:
+      - s3_encryption_required
+      - public_access_block_required
+      - required_tags
+
+  - name: private-service
+    description: Standard private application service pattern
+    owner: platform-runtime@example.com
+    module_source: git::https://github.com/example/terraform-modules.git//private-service
+    allowed_environments:
+      - dev
+      - test
+      - prod
+    required_inputs:
+      - project
+      - environment
+      - owner
+      - cost_center
+      - network_name
+    guardrails:
+      - approved_instance_sizes
+      - required_tags
+      - private_network_only

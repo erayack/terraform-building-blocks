@@ -1,6 +1,6 @@
-# Terraform Building Blocks: 7 Levels
+# Terraform Building Blocks: 8 Levels
 
-A small, book-style Terraform course you can run locally. It starts with one hardcoded resource and builds up to modules, dynamic configuration, policy checks, platform workflows, and real-world project layout.
+A small, book-style Terraform course you can run locally. It starts with one hardcoded resource and builds up to modules, dynamic configuration, policy checks, platform workflows, real-world project layout, and enterprise governance.
 
 The examples use AWS so the code feels real. The same Terraform ideas apply to Azure, Google Cloud, Kubernetes, GitHub, and most other providers.
 
@@ -15,6 +15,7 @@ The examples use AWS so the code feels real. The same Terraform ideas apply to A
 5. [Ecosystem Integration](05-ecosystem-integration/README.md): provisioners, workspaces, Terragrunt, policy as code
 6. [Operations Platform](06-operations-platform/README.md): CI/CD, testing, drift detection, promotion, observability
 7. [Real-world Project Layout](07-real-world-project-layout/README.md): environment folders, live stacks, reusable modules, state boundaries
+8. [Enterprise Scale and Governance](08-enterprise-scale-governance/README.md): landing zones, policy libraries, service catalogs, cost controls, recovery planning
 
 ## How to study this repo
 
@@ -24,7 +25,7 @@ Suggested path:
 
 1. [`QUICKSTART.md`](QUICKSTART.md): run the first example with minimal reading.
 2. [`COST-SAFETY.md`](COST-SAFETY.md): know what can create AWS resources and how to clean up.
-3. Level READMEs: read them in order from `01-foundation` to `07-real-world-project-layout`.
+3. Level READMEs: read them in order from `01-foundation` to `08-enterprise-scale-governance`.
 4. [`TERRAFORM-CLI.md`](TERRAFORM-CLI.md): keep this open when you forget a command.
 5. [`GLOSSARY.md`](GLOSSARY.md): use this when Terraform vocabulary starts to blur together.
 6. [`EXERCISES.md`](EXERCISES.md): do the small changes after each level.
@@ -94,6 +95,13 @@ Only run `terraform apply` when the plan makes sense to you.
 │   ├── live/
 │   │   ├── dev/
 │   │   └── prod/
+│   └── README.md
+├── 08-enterprise-scale-governance/
+│   ├── landing-zone/account-request.example.json
+│   ├── policy/
+│   ├── catalog/service-catalog.example.yml
+│   ├── finops/budget-policy.example.yml
+│   ├── dr/recovery-plan.example.md
 │   └── README.md
 ├── QUICKSTART.md
 ├── TERRAFORM-CLI.md

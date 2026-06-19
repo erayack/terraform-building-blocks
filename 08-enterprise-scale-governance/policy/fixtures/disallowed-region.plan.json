@@ -1,0 +1,8 @@
+{
+  "variables": {
+    "aws_region": {
+      "value": "ap-south-1"
+    }
+  },
+  "resource_changes": []
+}
