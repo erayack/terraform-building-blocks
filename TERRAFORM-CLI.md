@@ -346,10 +346,16 @@ Tests are useful for checking module contracts, outputs, validations, and assump
 
 ## Drift detection
 
-Use detailed exit codes:
+To check for drift against live infrastructure without proposing configuration changes, use a refresh-only plan:
 
 ```bash
-terraform plan -detailed-exitcode
+terraform plan -refresh-only
+```
+
+In CI, combine refresh-only mode with detailed exit codes:
+
+```bash
+terraform plan -refresh-only -detailed-exitcode
 ```
 
 Exit codes:
@@ -365,13 +371,13 @@ This is useful in CI because automation can distinguish failure from drift.
 Example shell pattern:
 
 ```bash
-terraform plan -detailed-exitcode
+terraform plan -refresh-only -detailed-exitcode
 code=$?
 
 if [ "$code" -eq 0 ]; then
   echo "No drift"
 elif [ "$code" -eq 2 ]; then
-  echo "Drift or pending changes detected"
+  echo "Drift detected"
 else
   echo "Terraform error"
   exit 1
@@ -464,6 +470,13 @@ terraform init
 terraform validate
 terraform test
 terraform plan -out=tfplan
+```
+
+### Scheduled drift workflow
+
+```bash
+terraform init
+terraform plan -refresh-only -detailed-exitcode
 ```
 
 ### Saved plan workflow

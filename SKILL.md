@@ -263,6 +263,7 @@ terraform fmt -recursive
 terraform fmt -check -recursive
 terraform init
 terraform validate
+terraform plan -refresh-only
 terraform plan -out=tfplan
 terraform show tfplan
 terraform apply tfplan
@@ -276,6 +277,7 @@ tofu fmt -recursive
 tofu fmt -check -recursive
 tofu init
 tofu validate
+tofu plan -refresh-only
 tofu plan -out=tfplan
 tofu show tfplan
 tofu apply tfplan
